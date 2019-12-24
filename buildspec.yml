@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr help
-      - $(aws ecr get-login --region us-east-2 --no-include-email)
+      - aws ecr get-login --region us-east-2 --no-include-email
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
