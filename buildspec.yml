@@ -3,11 +3,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get update
-      - apt install jq
+      - apt-get -y update
+      - apt install -y jq 
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
+      - $(aws ecr help)
       - $(aws ecr get-login --region us-east-2 --no-include-email)
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
