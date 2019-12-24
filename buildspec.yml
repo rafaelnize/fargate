@@ -4,7 +4,8 @@ phases:
   install:
     commands:
       - apt-get -y update
-      - apt install -y jq 
+      - apt install -y jq
+      - pip3 install awscli --upgrade --user
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
