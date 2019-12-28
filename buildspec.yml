@@ -26,6 +26,7 @@ phases:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - eval $(aws ecr get-login --no-include-email | sed ‘s|https://||’)
+      - aws ecr get-login --no-include-email
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - aws ecs describe-task-definition --task-definition green-blue-ecs-example | jq '.taskDefinition' > taskdef.json
