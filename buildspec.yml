@@ -29,6 +29,7 @@ phases:
       - aws ecr get-login --no-include-email
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - echo Task Name $TASK_NAME
       - aws ecs describe-task-definition --task-definition $TASK_NAME | jq '.taskDefinition' > taskdef.json
       - envsubst < appspec_template.yaml > appspec.yaml
 artifacts:
