@@ -7,7 +7,6 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "$CONTAINER_NAME"
           ContainerPort: "3000"
-          HostPort:      "3000"
         PlatformVersion: "LATEST"
         NetworkConfiguration:
           AwsvpcConfiguration:
