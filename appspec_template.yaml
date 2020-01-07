@@ -7,9 +7,10 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "$CONTAINER_NAME"
           ContainerPort: "3000"
+          HostPort:      "3000"
         PlatformVersion: "LATEST"
         NetworkConfiguration:
           AwsvpcConfiguration:
             Subnets: ["$SUBNET_1","$SUBNET_2","$SUBNET_3"]
             SecurityGroups: ["$SECURITY_GROUP"]
-            AssignPublicIp: "ENABLED"
+            AssignPublicIp: "DISABLED"
