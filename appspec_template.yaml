@@ -7,7 +7,7 @@ Resources:
         LoadBalancerInfo:
           ContainerName: "$CONTAINER_NAME"
           ContainerPort: "3000"
-          TargetGroupInfo: $TARGET_GROUP_NAME
+          TargetGroupInfo: "$TARGET_GROUP_NAME"
         PlatformVersion: "LATEST"
         NetworkConfiguration:
           AwsvpcConfiguration:
