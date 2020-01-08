@@ -3,10 +3,11 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: <TASK_DEFINITION>
+        TaskDefinition: $TASK_DEFINITION
         LoadBalancerInfo:
           ContainerName: "$CONTAINER_NAME"
           ContainerPort: "3000"
+          TargetGroupInfo: $TARGET_GROUP_NAME
         PlatformVersion: "LATEST"
         NetworkConfiguration:
           AwsvpcConfiguration:
